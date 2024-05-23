@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whey Zone</title>
+    <meta name="description" content="A description of your website for better SEO">
+    <link rel="stylesheet" href="style.css">
+    <body>
+    <header>
+        <div class="logo">
+            <img src="whey.png" alt="Website Logo">
+            <h1>Whey Zone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart" aria-label="Cart">Cart</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <img class="hero-image" src="cbum.jpg" alt="Hero Image" loading="lazy">
+        <div class="hero-content">
+            <h1>Welcome to My Website</h1>
+            <p>"Train like an athlete, eat like a nutritionist, sleep like a baby, win like a champion"</p>
+            <div class="cta-buttons">
+                <a href="#about" class="btn">Learn More</a>
+                <a href="#contact" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+    </section>
+ <section id="services" class="product-section">
+        <div class="product-row">
+		<div class="product-column">
+                <img src="ascent.jpg" alt="Ascent Native Fuel Whey, Chocolate">
+                <h3>Ascent Native Fuel Whey, Chocolate</h3>
+                <p>Php2,834.65</p>
+                <button data-product="Ascent Native Fuel Whey, Chocolate" data-price="2,834.65">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="gnarly.jpg" alt="Gnarly Grass-Fed Whey Vanilla Protein Supplement" loading="lazy">
+                <h3>Gnarly Grass-Fed Whey Vanilla Protein Supplement</h3>
+                <p>Php3,644.55</p>
+                <button data-product="Gnarly Grass-Fed Whey Vanilla Protein Supplement" data-price="3644.55">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="gold.jpg" alt="Optimum Nutrition Gold Standard 100% Whey Protein Powder" loading="lazy">
+                <h3>Optimum Nutrition Gold Standard 100% Whey Protein Powder</h3>
+                <p>Php2,256.15</p>
+                <button data-product="Optimum Nutrition Gold Standard 100% Whey Protein Powder" data-price="2256.15">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="ladder.jpg" alt="Ladder Whey Protein Powder" loading="lazy">
+                <h3>Ladder Whey Protein Powder</h3>
+                <p>Php3,471.00</p>
+                <button data-product="Ladder Whey Protein Powder" data-price="3471.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-row">
+	    <div class="product-column" data-price="3,471.00">
+                <img src="ladder.jpg" alt="Ladder Whey Protein Powder">
+                <h3>Ladder Whey Protein Powder</h3>
+                <p>Php3,471.00</p>
+		<button data-product="Ladder Whey Protein Powder" data-price="3,471.00">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="naked.jpg" alt="Naked Whey Chocolate Protein Powder" loading="lazy">
+                <h3>Naked Whey Chocolate Protein Powder</h3>
+                <p>Php2,256.15</p>
+                <button data-product="Naked Whey Chocolate Protein Powder" data-price="2256.15">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="pure.jpg" alt="Pure Whey Protein Powder Isolate, Whey Concentrate" loading="lazy">
+                <h3>Pure Whey Protein Powder Isolate, Whey Concentrate</h3>
+                <p>Php3,264.00</p>
+                <button data-product="Pure Whey Protein Powder Isolate, Whey Concentrate" data-price="3264.00">Add to Cart</button>
+            </div>
+            <div class="product-column">
+                <img src="thor.jpg" alt="Thorne Chocolate Whey Protein Isolate" loading="lazy">
+                <h3>Thorne Chocolate Whey Protein Isolate</h3>
+                <p>Php3,586.70</p>
+                <button data-product="Thorne Chocolate Whey Protein Isolate" data-price="3586.70">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cart</h2>
+            <ul id="cartItems"></ul>
+            <div class="cart-summary">
+                Total Cost: <span id="totalCost">0.00</span>
+            </div>
+            <div class="cart-details">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" required>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" required>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+            <div class="order-summary-container">
+                <h3>Order Summary</h3>
+                <div class="order-summary-details">
+                    <p>Email: <span id="summaryEmail"></span></p>
+                    <p>Address: <span id="summaryAddress"></span></p>
+                    <p>Postal Code: <span id="summaryPostalCode"></span></p>
+                    <p>Contact Number: <span id="summaryContactNumber"></span></p>
+                    <p>Items:</p>
+                    <ul id="summaryItems"></ul>
+                    <p>Total Cost: <span id="summaryTotalCost"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="secondary-banner">
+        <div class="banner-content" style="background-image: url('gym.jpg');">
+            <h2>“The body achieves what the mind believes.”</h2>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="whey.png" alt="Footer Logo">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="contact" class="footer-bottom">
+            <p>&copy; 2024 Whey Zone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"> </script>
+</body>
+</html>
